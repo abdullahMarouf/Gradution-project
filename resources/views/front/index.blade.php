@@ -1,4 +1,5 @@
 @extends('front.parent')
+@section('title' , 'minishop')
 @section('content')
     <section id="home-section" class="hero">
 		  <div class="home-slider owl-carousel">
@@ -26,7 +27,7 @@
 	      	<div class="overlay"></div>
 	        <div class="container-fluid p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
-	          	<img class="one-third order-md-last img-fluid" src="cms/images/bg_2.png" alt="">
+	          	<img class="one-third order-md-last img-fluid" src="{{asset('cms/images/bg_2.png')}}" alt="">
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">#New Arrival</span>
@@ -88,7 +89,7 @@
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">New Shoes Arrival</h2>
+            <h2 class="mb-4">New Arrivals</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
         </div>
@@ -98,7 +99,7 @@
                 @foreach ($products as $product )
                 <div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
     				<div class="product d-flex flex-column">
-    					<a href="#" ><img class="img-fluid" style="width:255px;height: 300px; " src="{{ asset('storage/' . $product->image) }}" alt="Colorlib Template">
+    					<a href="{{route('singleProduct', $product->id)}}" ><img class="img-fluid"   src="{{ asset('storage/' . $product->image) }}" alt="Colorlib Template">
     						<span class="status">50% Off</span>
     						<div class="overlay"></div>
     					</a>
@@ -117,12 +118,12 @@
 	    							</p>
 	    						</div>
 	    					</div>
-    						<h3><a href="#">{{$product->name}}</a></h3>
+    						<h3><a href="{{route('singleProduct', $product->id)}}">{{$product->name}}</a></h3>
   							<div class="pricing">
 	    						<p class="price"><span class="mr-2 price-dc">${{$product->compare_price}}</span><span class="price-sale">${{$product->price}}</span></p>
 	    					</div>
 	    					<p class="bottom-area d-flex px-3">
-    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+    							<a href="{{route('add-to-cart', $product->id)}}}" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
     							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
     						</p>
     					</div>

@@ -17,7 +17,7 @@
                         </svg>
                     </span>
                     <!--end::Svg Icon-->
-                    <h2>Add New Product</h2>
+                    <h2>Edit Category</h2>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -25,7 +25,7 @@
             <!--begin::Card body-->
             <div class="card-body pt-5">
                 <!--begin::Form-->
-                <form  action="{{route('categories.update',$user->id)}}" method="POST" enctype="multipart/form-data" id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework">
+                <form  action="{{route('categories.update',$category->id)}}" method="POST" enctype="multipart/form-data" id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework">
                     @csrf
                     @method('PUT')
                     <x-alert/>

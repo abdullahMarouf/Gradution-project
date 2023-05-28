@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -16,8 +17,32 @@ class ProductController extends Controller
     {
         //
         $products = Product::with('category')->paginate();
-        return response()->view('dashboard.products.index',compact('products'));
+        return response()->view('dashboard.products.index' ,compact('products'));
     }
+
+//    public function addToCart($id)
+//    {
+//        $product = Product::findOrFail($id);
+//        {
+//            $product = Product::findOrFail($id);
+//
+//            $cart = session()->get('cart', []);
+//
+//            if(isset($cart[$id])) {
+//                $cart[$id]['quantity']++;
+//            }  else {
+//                $cart[$id] = [
+//                    "name" => $product->name,
+//                    "image" => $product->image,
+//                    "price" => $product->price,
+//                    "quantity" => 1
+//                ];
+//            }
+//
+//            session()->put('cart', $cart);
+//            return redirect()->back()->with('success', 'Product add to cart successfully!');
+//        }
+//    }
 
     /**
      * Show the form for creating a new resource.
@@ -40,7 +65,7 @@ class ProductController extends Controller
                 'required', 'string', 'min:3', 'max:255',
             ],
             'description' => [
-                'required', 'string', 'min:5', 'max:200'
+                'required', 'string', 'min:10', 'max:500'
             ],
             'price' => [
                 'required','numeric','min:0'
@@ -106,7 +131,7 @@ class ProductController extends Controller
                 'nullable','numeric','min:0'
             ],
             'description' => [
-                'nullable', 'string', 'min:5', 'max:200'
+                'nullable', 'string', 'min:10', 'max:500'
             ],
             'status' => 'nullable|in:active,draft,archived',
         ]);
@@ -141,7 +166,7 @@ class ProductController extends Controller
     {
         $Product = Product::onlyTrashed()->findOrFail($id);
         $Product->restore();
-        return redirect()->route('products.restore');
+        return redirect()->route('products.index');
     }
     public function forceDelete($id)
     {

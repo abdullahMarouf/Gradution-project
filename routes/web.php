@@ -15,14 +15,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+//Route::prefix()->group(function (){
+//
+//
+//});
+
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::view('/blog','front.blog')->name("blog");
 Route::view('/about','front.about')->name("about");
-Route::view('/shop','front.shop')->name('shop');
-Route::view('/carts','front.cart')->name('cart');
+Route::get('/shop',[HomeController::class ,'index1'])->name('shop');
+//Route::view('/carts','front.cart')->name('cart');
 Route::view('/checkout','front.checkout')->name('checkout');
 Route::view('/contact-us','front.contact')->name("contact");
-Route::view('/single-product','front.single-product');
+Route::get('/single-product/{id}',[HomeController::class , 'index3'])->name('singleProduct');
+Route::get('add-to-cart/{id}' , [\App\Http\Controllers\CartController::class , 'addToCart'])->name('add-to-cart');
+Route::get('cart' , [\App\Http\Controllers\CartController::class , 'showCart'])->name('cart');
+
+//Route::resource('shop',HomeController::class);
 
 
 require __DIR__ . '/dashboard.php';

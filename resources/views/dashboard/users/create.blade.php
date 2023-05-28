@@ -105,7 +105,7 @@
                                     <span>Phone</span>
                                     <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Enter the contact's phone number (optional)." data-bs-original-title="Enter the contact's phone number (optional)." data-kt-initialized="1"></i>
                                 </label>
-                                <input type="mobile" class="form-control form-control-solid" name="mobile" value="">
+                                <input type="tel" class="form-control form-control-solid" name="mobile" value="">
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="fv-row mb-7">
                         <label class="fs-6 fw-semibold form-label mt-3">
-                            <span>Notes</span>
+                            <span>Address</span>
                             <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Enter any additional notes about the contact (optional)." data-bs-original-title="Enter any additional notes about the contact (optional)." data-kt-initialized="1"></i>
                         </label>
                         <textarea class="form-control form-control-solid" name="address"></textarea>

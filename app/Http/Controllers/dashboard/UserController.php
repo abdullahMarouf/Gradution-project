@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'name' => 'required|string|min:4|max:50',
             // 'mobile' => 'required|digits:10|unique:users,id|numeric',
@@ -53,6 +53,7 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->address = $request->input('address');
+        $user->mobile = $request->input('mobile');
         $user->password = Hash::make($request->input('password'));
         if ($request->hasFile('image')) {
             $file = $request->file('image');
@@ -108,6 +109,7 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->address = $request->input('address');
+        $user->mibile = $request->input('mibile');
         $user->password = Hash::make($request->input('password'));
         $saved = $user->save();
 

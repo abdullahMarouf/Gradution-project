@@ -36,7 +36,7 @@
                                     <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check">
                                 </div>
                             </th>
-                            <th class="min-w-150px">Name </th>
+                            <th class="min-w-150px">image |  Name </th>
                             <th class="min-w-140px">email</th>
                             <th class="min-w-140px">mobile</th>
                             <th class="min-w-140px">address</th>
@@ -60,7 +60,7 @@
                                         <img src="{{ asset('storage/'. $user->image)}}" alt="">
                                     </div>
                                     <div class="d-flex justify-content-start flex-column">
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{$user->name}}</a>
+                                        <span class="text-info fw-bolder text-hover-primary fs-6">{{$user->name}}</span>
                                         {{-- <span class="text-muted fw-bold text-muted d-block fs-7">HTML, JS, ReactJS</span> --}}
                                     </div>
                                 </div>
@@ -69,11 +69,11 @@
                                 <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">{{$user->email}}</a>
                             </td>
                             <td>
-                                <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">{{$user->mobile}}</a>
+                                <span class="text-success fw-bolder  d-block fs-6">{{$user->mobile}}</span>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-start flex-column">
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{$user->address}}</a>
+                                        <span class="text-warning fw-bolder  fs-6">{{$user->address}}</span>
                                         {{-- <span class="text-muted fw-bold text-muted d-block fs-7">HTML, JS, ReactJS</span> --}}
                                     </div>
                                 </div>

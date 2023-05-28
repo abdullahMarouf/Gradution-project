@@ -52,7 +52,7 @@
                                     <i class="bi bi-pencil-fill fs-7"></i>
                                     <!--begin::Inputs-->
                                     <input type="file" name="image" value="{{old('image') ?? $product->image }}">
-{{--                                     <input type="hidden" name="avatar_remove">--}}
+                                     <input type="hidden" name="avatar_remove">
                                     <!--end::Inputs-->
                                 </label>
                                 <!--end::Edit-->
@@ -130,25 +130,25 @@
                                 <span>description</span>
                                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Enter the contact's phone number (optional)." data-bs-original-title="Enter the contact's phone number (optional)." data-kt-initialized="1"></i>
                             </label>
-                            <textarea name="description"class="form-control form-control-solid" id="" cols="30" rows="10">{{old('description')}}</textarea>
+                            <textarea name="description"class="form-control form-control-solid" id="" cols="30" rows="10">{{old('description') ?? $product->description}}</textarea>
                         </div>
                     </div>
-                    <div class="form-check form-check-custom form-check-solid form-check-primary">
-                        <label for="status" class="form">status</label>
+                    <div class="form-check form-check-custom form-check-solid form-check-primary" >
+                        <label for="status" class="form" >status</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="status" value="active" @checked(old('status')=='active')>
+                            <input class="form-check-input" type="radio" name="status" id="status" value="active" @checked(old('status') ?? $product->status)>
                             <label class="form-check-label" for="status">
                                 active
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="status" value="draft" @checked(old('status')=='draft')>
+                            <input class="form-check-input" type="radio" name="status" id="status" value="draft" @checked(old('status') ?? $product->status)>
                             <label class="form-check-label" for="status">
                                 draft
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="status" value="archived" @checked(old('status')=='archived')>
+                            <input class="form-check-input" type="radio" name="status" id="status" value="archived" @checked(old('status') ?? $product->status)>
                             <label class="form-check-label" for="status">
                                 archived
                             </label>

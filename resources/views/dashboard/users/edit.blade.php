@@ -15,7 +15,7 @@
                         </svg>
                     </span>
                     <!--end::Svg Icon-->
-                    <h2>Add New User</h2>
+                    <h2>Edit User</h2>
                 </div>
                 <!--end::Card title-->
             </div>

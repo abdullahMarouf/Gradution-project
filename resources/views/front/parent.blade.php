@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Minishop - Free Bootstrap 4 Template by Colorlib</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -60,7 +60,7 @@
                             aria-haspopup="true" aria-expanded="false">Catalog</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="{{route('shop')}}">Shop</a>
-                            <a class="dropdown-item" href="product-single.html">Single Product</a>
+{{--                            <a class="dropdown-item" href="{{route('singleProduct')}}">Single Product</a>--}}
                             <a class="dropdown-item" href="{{route('cart')}}">Cart</a>
                             <a class="dropdown-item" href="{{route('checkout')}}">Checkout</a>
                         </div>
@@ -68,8 +68,8 @@
                     <li class="nav-item"><a href="{{ route('about')}}" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="{{ route('blog')}}" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="{{ route('contact')}}" class="nav-link">Contact</a></li>
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span
-                                class="icon-shopping_cart"></span>[0]</a></li>
+                    <li class="nav-item cta cta-colored"><a href="{{route('cart')}}" class="nav-link"><span
+                                class="icon-shopping_cart"></span>{{count((array) session('cart.items')) ?? [] }}</a></li>
 
                 </ul>
             </div>

@@ -6,7 +6,7 @@
             <!--begin::Header-->
             <div class="card-header border-0 pt-5">
                 <h3 class="card-title align-items-start flex-column">
-                    <span class="card-label fw-bolder fs-3 mb-1">Create Admin</span>
+                    <span class="card-label fw-bolder fs-3 mb-1">Admins List</span>
                     <span class="text-muted mt-1 fw-bold fs-7">Over 500 members</span>
                 </h3>
                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="" data-bs-original-title="Click to add a user">
@@ -18,7 +18,7 @@
                         <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black"></rect>
                     </svg>
                 </span>
-                        <!--end::Svg Icon-->New User</a>
+                        <!--end::Svg Icon-->New Admin</a>
                 </div>
             </div>
             <!--end::Header-->
@@ -39,9 +39,9 @@
                             <th class="min-w-150px">Name </th>
                             <th class="min-w-140px">email</th>
                             <th class="min-w-140px">mobile</th>
-                            <th class="min-w-140px">address</th>
+                            <th class="min-w-100px">address</th>
                             <th class="min-w-120px">password</th>
-                            <th class="min-w-100px text-end">Actions</th>
+                            <th class="min-w-120px text-end">Actions</th>
                         </tr>
                         </thead>
                         <!--end::Table head-->
@@ -55,17 +55,17 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">{{$admin->name}}</a>
+                                    <span class="text-info fw-bolder  d-block fs-6">{{$admin->name}}</span>
                                 </td>
                                 <td>
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">{{$admin->email}}</a>
+                                    <span class="text-dark fw-bolder d-block fs-6">{{$admin->email}}</span>
                                 </td>
                                 <td>
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">{{$admin->mobile}}</a>
+                                    <span class=" fw-bolder text-success d-block fs-6" >{{$admin->mobile}}</span>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-start flex-column">
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{$admin->address}}</a>
+                                        <span class="text-warning fw-bolder fs-6">{{$admin->address}}</span>
                                         {{-- <span class="text-muted fw-bold text-muted d-block fs-7">HTML, JS, ReactJS</span> --}}
                                     </div>
                 </div>
@@ -78,7 +78,7 @@
                 </div> --}}
                 </td>
                 <td class=" d-flex gap-2">
-                    <a class="btn btn-outline-info" href="{{ route('admins.edit', $admin->id) }}">Edit</a>
+                    <a class="btn btn-outline-primary" href="{{ route('admins.edit', $admin->id) }}">Edit</a>
                     <form action="{{ route('admins.destroy', $admin->id) }}"
                           method="POST">
                         @method('DELETE')
